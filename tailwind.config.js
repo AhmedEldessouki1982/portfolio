@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        "fadein": "fadein 5s linear infinite reverse",
+        "fadein": "fadein 10s linear infinite reverse",
       },
       keyframes: {
         fadein : {

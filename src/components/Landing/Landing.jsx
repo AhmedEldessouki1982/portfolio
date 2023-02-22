@@ -2,10 +2,9 @@ import React from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery.jsx';
 import profile from '../../assets/profile.png';
 import Animatedname from '../AnimatedName/Animatedname.jsx';
-
+import SocialMediaBar from '../SocialMediaBar/SocialMediaBar.jsx';
 export default function Landing() {
   let isSmallScreen = useMediaQuery ("(max-width: 1060px)");
-
   return (
     <section className='md:flex justify-center md:justify-between md:gap-16 md:mx-10 md:my-20'>
       {
@@ -29,10 +28,11 @@ export default function Landing() {
           </div>)
         }
 
-        {/*text & name section*/} 
-          <div className='m-20'>
-           <Animatedname />
-          </div>
+        {/*text & name section & social bar*/} 
+        <div className ='mt-20 md:ml-32'>
+          <Animatedname />
+          <SocialMediaBar />
+        </div>
     </section>
   )
 }
