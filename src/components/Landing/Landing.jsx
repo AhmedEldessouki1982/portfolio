@@ -6,7 +6,7 @@ import SocialMediaBar from '../SocialMediaBar/SocialMediaBar.jsx';
 export default function Landing() {
   let isSmallScreen = useMediaQuery ("(max-width: 1060px)");
   return (
-    <section className='md:flex justify-center md:justify-between md:gap-16 md:mx-10 md:my-20'>
+    <section className='md:flex justify-center md:h-full md:justify-between md:gap-16 md:mx-10 md:my-20'>
       {
         !isSmallScreen? 
         (
