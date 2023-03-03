@@ -6,16 +6,16 @@ import LineGradient from '../lineGradient/LineGradient';
 export default function MySkils() {
   let isSmallScreen = useMediaQuery ("(max-width: 1060px)");
   return (
-    <section className = 'pt-10 pb-24 mx-auto md:w-10/12'>
+    <section id='Skills' className = 'pt-10 pb-24 mx-auto md:w-10/12'>
         {/*header and img section*/}
         <div className='order-2 md:flex justify-between items-center'>
-            <p className='uppercase font-playfair font-semibold text-xl md:text-4xl mb-5 ml-5'>
+            <span className='uppercase font-playfair font-semibold text-xl md:text-4xl mb-5 ml-5'>
                 My <p className ='inline text-red'>skills</p>
                 <LineGradient width={"w-40"} />
                 <p className='px-5 text-justify font-playfair font-semibold text-base normal-case md:w-[34rem] mt-5'>
                 Commissioning Manager to support, define and organize the start-up, testing and commissioning activities,able to make the commissioning process standardized as much as possible through formalized procedures and documentation.
                 </p>
-            </p>
+            </span>
             
             {/*img section*/}
             <div className='m-10 md:m-1'>

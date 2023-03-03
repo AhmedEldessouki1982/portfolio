@@ -1,16 +1,17 @@
 import React from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery.jsx';
-// import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { HashLink as Link } from 'react-router-hash-link';
 import menu from '../../assets/menu-icon.svg';
 import close from '../../assets/close-icon.svg';
 
-export default function NavBar({selectedPage, setSelectedPage}) {
+export default function NavBar({selectedPage, setSelectedPage, pagePosition}) {
   let isSmallScreen = useMediaQuery ("(max-width: 1060px)");
   let [mobileMenuOpen, setMobileMenueOpen] = React.useState(false);
   let menuItems = ["Home", "Skills", "Projects", "Testimonials", "Contacts"];
+  
   return (
-    <nav className="flex flex-row justify-between flex-start px-10 my-5">
-      <h4 className="px-6 font-playfair text-3xl">
+    <nav className= {`${pagePosition? "" : "bg-red"} md:fixed md:top-0 md:w-full md:h-16 flex flex-row justify-between flex-start px-10 my-5 z-40`}>
+      <h4 onClick={() => setSelectedPage("Home")} className="px-6 py-2 font-playfair text-3xl cursor-pointer">
         ae
       </h4>
 
@@ -21,7 +22,7 @@ export default function NavBar({selectedPage, setSelectedPage}) {
           {
             menuItems.map(
               (item,i) => (
-                <li key = {i} className='cursor-pointer list-none mx-7'>{item}</li>
+                <Link onClick={() => setSelectedPage(item)} smooth to={`#${item}`} key={i} className='cursor-pointer mx-7'>{item}</Link>
               )
             )
           }
@@ -44,11 +45,11 @@ export default function NavBar({selectedPage, setSelectedPage}) {
             </div>
               { 
                 mobileMenuOpen &&
-                <div className='absolute w-8/12 h-full bg-blue right-0 top-0 text-black text-left p-20'>
+                <div className='flex flex-col absolute w-8/12 h-full bg-blue right-0 top-0 text-black text-left p-20'>
                   {
                     menuItems.map(
                           (item,i) => (
-                            <li key = {i} className='my-5 text-2xl cursor-pointer list-none'>{item}</li>
+                            <Link smooth to={`#${item}`} key={i} className='my-5 text-2xl cursor-pointer'>{item}</Link>
                           )
                         )
                   }     
