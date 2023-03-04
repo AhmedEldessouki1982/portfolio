@@ -9,9 +9,16 @@ export default function NavBar({selectedPage, setSelectedPage, pagePosition}) {
   let [mobileMenuOpen, setMobileMenueOpen] = React.useState(false);
   let menuItems = ["Home", "Skills", "Projects", "Testimonials", "Contacts"];
   
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+    });
+  }
+
   return (
-    <nav className= {`${pagePosition? "" : "bg-red"} md:fixed md:top-0 md:w-full md:h-16 flex flex-row justify-between flex-start px-10 my-5 z-40`}>
-      <h4 onClick={() => setSelectedPage("Home")} className="px-6 py-2 font-playfair text-3xl cursor-pointer">
+    <nav className= {`${pagePosition? "" : "bg-red"} md:fixed md:top-0 md:w-full md:h-12 flex flex-row justify-between flex-start px-10 my-1 z-40`}>
+      <h4 onClick={() => scrollToTop()} className="px-6 py-1 font-playfair text-3xl cursor-pointer">
         ae
       </h4>
 

@@ -4,6 +4,7 @@ import Landing from './components/Landing/Landing';
 import LineGradient from './components/lineGradient/LineGradient';
 import MySkils from './components/mySkils/MySkils';
 import NavBar from './components/NavBar/NavBar';
+import Project from './components/Projects/Project';
 
 export default function App() {
   let [selectedPage, setSelectedPage] = React.useState("Home");
@@ -11,7 +12,6 @@ export default function App() {
 
   React.useEffect(
    ()=> {
-    selectedPage === "Home" && window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     let handleScroll = () => {
       window.scrollY === 0 ? setPageTop(true) : setPageTop(false)
     }
@@ -33,7 +33,10 @@ export default function App() {
         <div>
           <MySkils />
         </div>
-
+        <LineGradient />
+        <div>
+          <Project />
+        </div>
       </div>
     </BrowserRouter>
   );
