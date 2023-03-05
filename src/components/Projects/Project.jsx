@@ -13,7 +13,7 @@ export default function Project() {
   let isSmallScreen = useMediaQuery ("(max-width: 1060px)");
 
   return (
-    <section id='Projects' className = 'relative pt-10 pb-24 mx-auto md:w-10/12'>
+    <section id='Projects' className = 'relative pt-10 pb-24 ml-1 md:mx-auto md:w-10/12'>
         {/*header and img section*/}
         <div className='order-2 md:flex justify-between items-center'>
             <span className='uppercase font-playfair font-semibold text-xl md:text-4xl mb-5 ml-5'>
@@ -22,9 +22,9 @@ export default function Project() {
             </span>
         </div>
         <div className='mt-10'>
-          <TimeLine projectLocation = {location} jobDescription={jobDescription} jobTitle = {jobTitle} icon = {manager} cardDirection = {"left"}/>
+          <TimeLine projectLocation = {location} jobDescription={jobDescription} jobTitle = {jobTitle} icon = {manager} cardDirection = {`${isSmallScreen? "right":"left"}`}/>
           <TimeLine projectLocation = {location} jobDescription={jobDescription} jobTitle = {jobTitle} icon = {engineer} cardDirection = {"right"}/>
-          <TimeLine projectLocation = {location} jobDescription={jobDescription} jobTitle = {jobTitle} icon = {engineer} cardDirection = {"left"}/>
+          <TimeLine projectLocation = {location} jobDescription={jobDescription} jobTitle = {jobTitle} icon = {engineer} cardDirection = {`${isSmallScreen? "right":"left"}`}/>
           <TimeLine projectLocation = {location} jobDescription={jobDescription} jobTitle = {jobTitle} icon = {engineer} cardDirection = {"right"}/>
         </div>
 
